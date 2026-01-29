@@ -25,23 +25,26 @@ export function AffirmationQuiz({ onComplete }) {
     <div
       style={{
         background: "linear-gradient(135deg, #f9d423, #ff4e50)",
-        padding: "20px",
-        borderRadius: "15px",
-        color: "white",
+        padding: "30px 25px",
+        borderRadius: "20px",
+        color: "#fff",
         textAlign: "center",
-        maxWidth: "400px",
-        margin: "0 auto",
-        boxShadow: "0 8px 20px rgba(0,0,0,0.2)",
-        animation: "fadeIn 0.5s ease-in-out"
+        maxWidth: "420px",
+        margin: "50px auto",
+        boxShadow: "0 12px 30px rgba(0,0,0,0.25)",
+        fontFamily: "'Poppins', sans-serif",
+        animation: "fadeIn 0.6s ease-in-out",
       }}
     >
       <p
         style={{
           fontStyle: "italic",
-          fontSize: "1.4rem",
-          lineHeight: "1.5",
-          marginBottom: "20px",
-          animation: "fadeText 0.6s ease-in-out"
+          fontSize: "1.5rem",
+          lineHeight: "1.6",
+          marginBottom: "25px",
+          letterSpacing: "0.5px",
+          textShadow: "1px 1px 3px rgba(0,0,0,0.3)",
+          animation: "fadeText 0.7s ease-in-out",
         }}
       >
         {affirmations[index]}
@@ -51,21 +54,24 @@ export function AffirmationQuiz({ onComplete }) {
         style={{
           backgroundColor: "#fff",
           color: "#ff4e50",
-          border: "2px solid white",
-          borderRadius: "25px",
-          padding: "10px 20px",
-          fontSize: "1rem",
-          fontWeight: "bold",
+          border: "none",
+          borderRadius: "30px",
+          padding: "12px 28px",
+          fontSize: "1.1rem",
+          fontWeight: "600",
           cursor: "pointer",
-          transition: "all 0.3s ease",
+          boxShadow: "0 6px 15px rgba(0,0,0,0.2)",
+          transition: "all 0.4s ease",
         }}
         onMouseOver={(e) => {
           e.target.style.backgroundColor = "#ff4e50";
-          e.target.style.color = "white";
+          e.target.style.color = "#fff";
+          e.target.style.transform = "scale(1.05)";
         }}
         onMouseOut={(e) => {
-          e.target.style.backgroundColor = "white";
+          e.target.style.backgroundColor = "#fff";
           e.target.style.color = "#ff4e50";
+          e.target.style.transform = "scale(1)";
         }}
       >
         Next 💖
@@ -74,12 +80,12 @@ export function AffirmationQuiz({ onComplete }) {
       <style>
         {`
           @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
           }
           @keyframes fadeText {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
           }
         `}
       </style>
